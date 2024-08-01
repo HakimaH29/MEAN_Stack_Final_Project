@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="data_to_post_from_form.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- We are using angular here to create a form that sends data back to the Mongo database.  -->
+<body>
+    <div data-ng-app="class_demo" >
+        <div data-ng-controller="first_controller">
+            <!-- <h1>{{my_header}}</h1> -->
+             <!-- This will give the user the time -->
+            <p>{{theTime}}</p>
+            <p>{{my_num}}</p>
+
+        </div>
+        <hr>
+
+    <div data-ng-app="class_demo" >
+        <div data-ng-controller="second_controller">
+            <h1> Welcome to the Forms Page</h1>
+            <p>{{my_err}}</p>
+            <p>{{my_err_post}}</p>
+            <!-- Post request to our server -->
+            <h4>Submit your response below</h4>
+            <form data-ng-submit="my_post(u_name, u_age, u_city, u_hobby)">
+                <input type="text" placeholder="User Name" data-ng-model="u_name">
+                <input type="number" placeholder="User Age" data-ng-model="u_age">
+                <input type="text" placeholder="User City" data-ng-model="u_city">
+                <input type="text" placeholder="User Hobby" data-ng-model="u_hobby">
+                <input type="submit" value="Submit!">
+            </form>
+            <!-- //response from API -->
+            <h4>Refresh to see the Updated List</h4>
+            <h5> Results include all entries in the SQL database, the backend, and this form on our page.</h5>
+            <p data-ng-repeat="item in my_res | orderBy : 'user_age'">
+                {{item.user_name + ", " + item.user_age + ", " + item.user_city + ", " + item.user_hobby}}
+            </p>
+
+
+        </div>
+        <hr>
+        <div data-ng-controller="third_controller">
+
+        </div>
+    </div>
+</body>
+</html>

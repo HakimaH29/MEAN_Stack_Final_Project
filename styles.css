@@ -1,0 +1,35 @@
+body {
+    background-color: lightblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1, h4 {
+    text-align: center;
+}
+input.ng-valid{
+    background-color: rgb(130, 148, 207);
+}
+
+input.ng-invalid{
+    background-color: red;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 10px 20px;
+    margin: 6px 0;
+    box-sizing: border-box;
+  }
+
+  input[type=number] {
+    width: 50%;
+    padding: 10px 20px;
+    margin: 6px 0;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 50%;
+    padding: 10px 20px;
+    margin: 6px 0;
+    box-sizing: border-box;
+  }
